@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root to: "static_pages#landing"  # This would be a custom landing page controller/view
+
 end
