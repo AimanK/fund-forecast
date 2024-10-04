@@ -1,0 +1,44 @@
+<div class="container mx-auto p-8 bg-white rounded-lg shadow-md">
+  <%= form_for @budget do |f| %>
+    <h2 class="text-2xl font-bold mb-6">Create a Budget</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <%= f.label :month, "Month", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.date_select :month, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+
+      <div>
+        <%= f.label :total_income, "Total Income", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.number_field :total_income, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mt-8">Categories</h3>
+    <div id="categories" class="mt-4">
+      <%= f.fields_for :categories do |category_form| %>
+        <div class="border-t pt-4">
+          <%= category_form.label :name, "Category", class: "block text-sm font-medium text-gray-700" %>
+          <%= category_form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <%= category_form.label :planned, "Planned", class: "block text-sm font-medium text-gray-700" %>
+              <%= category_form.number_field :planned, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+            </div>
+
+            <div>
+              <%= category_form.label :spent, "Spent", class: "block text-sm font-medium text-gray-700" %>
+              <%= category_form.number_field :spent, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+            </div>
+          </div>
+
+          <%= link_to "Remove Category", '#', class: "text-red-500 mt-4 block" %>
+        </div>
+      <% end %>
+    </div>
+
+    <button type="button" id="add-category" class="mt-6 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg">Add Category</button>
+
+    <%= f.submit "Save Budget", class: "mt-6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg" %>
+  <% end %>
+</div>

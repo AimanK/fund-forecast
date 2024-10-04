@@ -1,0 +1,13 @@
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 flex items-center justify-center">
+  <div class="text-center bg-white p-10 rounded-lg shadow-lg max-w-md w-full">
+    <h2 class="text-3xl font-bold text-blue-900 mb-8">What would you like to do?</h2>
+
+    <div class="space-y-6">
+      <!-- View Previous Budgets Button -->
+      <%= link_to "View Previous Budgets", budgets_path, class: "block w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300" %>
+
+      <!-- Create New Budget Button -->
+      <%= link_to "Create New Budget", new_budget_path, class: "block w-full bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300" %>
+    </div>
+  </div>
+</div>

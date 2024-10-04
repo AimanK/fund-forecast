@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  get 'budgets/prompt', to: 'budgets#prompt', as: 'budgets_prompt'
+
+  resources :budgets
+
   root to: "static_pages#landing"  # This would be a custom landing page controller/view
 
 end

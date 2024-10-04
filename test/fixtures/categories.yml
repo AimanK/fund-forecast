@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  planned: 9.99
+  spent: 9.99
+  budget: one
+  parent_id: 1
+
+two:
+  name: MyString
+  planned: 9.99
+  spent: 9.99
+  budget: two
+  parent_id: 1
