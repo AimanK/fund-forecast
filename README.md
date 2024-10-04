@@ -12,7 +12,7 @@
 
 ## 📸 Screenshots
 
-_Include some snapshots of your app to give users a visual tour!_
+_In Development, Coming Soon!_
 
 ## 🛠️ Technologies Used
 
@@ -53,32 +53,32 @@ rails server
 
 
 ### Tailwind CSS
-For frontend development, start Tailwind's watch command to automatically compile your styles:
+**For frontend development, start Tailwind's watch command to automatically compile your styles**:
 ```bash
 ./bin/dev
 ```
 
 ## 💡 Usage
 Once signed in:
-- Create a new budget 📝 to manage your finances.
-- Itemize income and expenses 💸.
-- Track past budgets 🕑 to analyze your financial trends.
-- Use the data to forecast your spending 🔮 and plan ahead.
+- **Create a new budget 📝 to manage your finances**.
+- **Itemize income and expenses 💸**.
+- **Track past budgets 🕑 to analyze your financial trends**.
+- **Use the data to forecast your spending 🔮 and plan ahead**.
 ## 🤝 Contributing
-- Contributions are welcome! 🎉 If you'd like to contribute, please follow these steps:
+- **Contributions are welcome! 🎉 If you'd like to contribute, please follow these steps**:
 
 ## Fork the repository 🪝.
-- Create a new feature branch
+- **Create a new feature branch**
   ```bash
   (git checkout -b feature/new-feature).
   ```
-- Commit your changes
+- **Commit your changes**
   ```bash
   (git commit -m 'Add a new feature').
   ```
-- Push to the branch
+- **Push to the branch**
   ```bash
   (git push origin feature/new-feature).
   ```
-- Submit a pull request 🛠️.
+- **Submit a pull request 🛠️**.
 
