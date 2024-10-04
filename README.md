@@ -11,8 +11,8 @@
 - **Visual Data Analysis**: (Future feature) Leverage charts 📈 and graphs 📊 to visualize spending habits and forecast your financial future with ease.
 
 ## 📸 Screenshots
+<img width="1439" alt="Screenshot 2024-10-03 at 8 09 49 PM" src="https://github.com/user-attachments/assets/889383f2-0bbf-4227-958f-4789cc4e14ce">
 
-_In Development, Coming Soon!_
 
 ## 🛠️ Technologies Used
 
