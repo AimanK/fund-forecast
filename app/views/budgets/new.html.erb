@@ -1,122 +1,88 @@
-<div class="container mx-auto p-8 bg-white rounded-lg shadow-md">
-  <%= form_for @budget do |f| %>
-    <h2 class="text-2xl font-bold mb-6">Create a Budget</h2>
-    <div class="grid grid-cols-2 gap-4">
+<%= form_for @budget do |f| %>
+  <!-- Month Selection -->
+  <div class="field">
+    <%= f.label :month, "Month" %>
+    <%= f.date_select :month, order: [:month, :year], discard_day: true, prompt: { month: 'Select month', year: 'Select year' } %>
+  </div>
+
+ <!-- Income (nested fields for income model) -->
+  <div class="field">
+    <%= f.fields_for :income do |income_fields| %>
+      <h3>Income</h3>
       <div>
-        <%= f.label :month, "Month", class: "block text-sm font-medium text-gray-700" %>
-        <%= f.date_select :month, order: [:month, :year], discard_day: true, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+        <%= income_fields.label :paycheck_1, "Paycheck 1" %>
+        <%= income_fields.number_field :paycheck_1, step: 0.01, class: "form-control" %>
       </div>
 
       <div>
-        <%= f.label :total_income, "Total Income", class: "block text-sm font-medium text-gray-700" %>
-        <%= f.number_field :total_income, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+        <%= income_fields.label :paycheck_2, "Paycheck 2" %>
+        <%= income_fields.number_field :paycheck_2, step: 0.01, class: "form-control" %>
       </div>
-    </div>
+    <% end %>
+  </div>
 
-    <h3 class="text-xl font-bold mt-8">Giving</h3>
-    <div data-controller="category">
-      <div id="categories" data-category-target="categories" class="mt-4">
-        <%= f.fields_for :categories do |category_form| %>
-          <div class="nested-fields border-t pt-4">
-            <%= category_form.label :name, "Category", class: "block text-sm font-medium text-gray-700" %>
-            <%= category_form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <%= category_form.label :planned, "Planned", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :planned, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
+  <!-- Giving -->
+  <div class="field">
+    <%= f.label :giving, "Giving" %>
+    <%= f.number_field :giving, step: 0.01, class: "form-control" %>
+  </div>
 
-              <div>
-                <%= category_form.label :spent, "Spent", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :spent, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
-            </div>
+  <!-- Savings -->
+  <div class="field">
+    <%= f.label :savings, "Savings" %>
+    <%= f.number_field :savings, step: 0.01, class: "form-control" %>
+  </div>
 
-            <%= link_to "Remove Category", '#', class: "text-red-500 mt-4 block", data: { action: "category#removeCategory" } %>
-          </div>
-        <% end %>
-      </div>
+  <!-- Housing -->
+  <div class="field">
+    <%= f.label :housing, "Housing" %>
+    <%= f.number_field :housing, step: 0.01, class: "form-control" %>
+  </div>
 
-      <button type="button" data-action="category#addCategory" class="mt-6 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg">Add Category</button>
+  <!-- Transportation -->
+  <div class="field">
+    <%= f.label :transportation, "Transportation" %>
+    <%= f.number_field :transportation, step: 0.01, class: "form-control" %>
+  </div>
 
-      <!-- Hidden template for new categories -->
-      <template data-category-target="template">
-        <div class="nested-fields border-t pt-4">
-          <%= f.fields_for :categories, Category.new, child_index: "NEW_CATEGORY" do |category_form| %>
-            <%= category_form.label :name, "Category", class: "block text-sm font-medium text-gray-700" %>
-            <%= category_form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+  <!-- Food -->
+  <div class="field">
+    <%= f.label :food, "Food" %>
+    <%= f.number_field :food, step: 0.01, class: "form-control" %>
+  </div>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <%= category_form.label :planned, "Planned", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :planned, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
+  <!-- Personal -->
+  <div class="field">
+    <%= f.label :personal, "Personal" %>
+    <%= f.number_field :personal, step: 0.01, class: "form-control" %>
+  </div>
 
-              <div>
-                <%= category_form.label :spent, "Spent", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :spent, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
-            </div>
+  <!-- Lifestyle -->
+  <div class="field">
+    <%= f.label :lifestyle, "Lifestyle" %>
+    <%= f.number_field :lifestyle, step: 0.01, class: "form-control" %>
+  </div>
 
-            <%= link_to "Remove Category", '#', class: "text-red-500 mt-4 block", data: { action: "category#removeCategory" } %>
-          <% end %>
-        </div>
-      </template>
-    </div>
+  <!-- Health -->
+  <div class="field">
+    <%= f.label :health, "Health" %>
+    <%= f.number_field :health, step: 0.01, class: "form-control" %>
+  </div>
 
-    <h3 class="text-xl font-bold mt-8">Categories</h3>
-    <div data-controller="category">
-      <div id="categories" data-category-target="categories" class="mt-4">
-        <%= f.fields_for :categories do |category_form| %>
-          <div class="nested-fields border-t pt-4">
-            <%= category_form.label :name, "Category", class: "block text-sm font-medium text-gray-700" %>
-            <%= category_form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+  <!-- Insurance -->
+  <div class="field">
+    <%= f.label :insurance, "Insurance" %>
+    <%= f.number_field :insurance, step: 0.01, class: "form-control" %>
+  </div>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <%= category_form.label :planned, "Planned", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :planned, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
+  <!-- Debt -->
+  <div class="field">
+    <%= f.label :debt, "Debt" %>
+    <%= f.number_field :debt, step: 0.01, class: "form-control" %>
+  </div>
 
-              <div>
-                <%= category_form.label :spent, "Spent", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :spent, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
-            </div>
-
-            <%= link_to "Remove Category", '#', class: "text-red-500 mt-4 block", data: { action: "category#removeCategory" } %>
-          </div>
-        <% end %>
-      </div>
-
-      <button type="button" data-action="category#addCategory" class="mt-6 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg">Add Category</button>
-
-      <!-- Hidden template for new categories -->
-      <template data-category-target="template">
-        <div class="nested-fields border-t pt-4">
-          <%= f.fields_for :categories, Category.new, child_index: "NEW_CATEGORY" do |category_form| %>
-            <%= category_form.label :name, "Category", class: "block text-sm font-medium text-gray-700" %>
-            <%= category_form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <%= category_form.label :planned, "Planned", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :planned, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
-
-              <div>
-                <%= category_form.label :spent, "Spent", class: "block text-sm font-medium text-gray-700" %>
-                <%= category_form.number_field :spent, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
-              </div>
-            </div>
-
-            <%= link_to "Remove Category", '#', class: "text-red-500 mt-4 block", data: { action: "category#removeCategory" } %>
-          <% end %>
-        </div>
-      </template>
-    </div>
-
-    <%= f.submit "Save Budget", class: "mt-6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg" %>
-  <% end %>
-</div>
+  <div class="actions">
+    <%= f.submit "Save Budget", class: "btn btn-primary" %>
+  </div>
+<% end %>
