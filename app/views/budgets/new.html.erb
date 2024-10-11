@@ -21,65 +21,230 @@
     <% end %>
   </div>
 
-
   <!-- Giving -->
   <div class="field">
-    <%= f.label :giving, "Giving" %>
-    <%= f.number_field :giving, step: 0.01, class: "form-control" %>
+    <%= fields_for :giving do |giving_fields| %>
+        <h3>Giving</h3>
+    <div>
+        <%= giving_fields.label :charity, "Charity" %>
+        <%= giving_fields.number_field :charity, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Savings -->
   <div class="field">
-    <%= f.label :savings, "Savings" %>
-    <%= f.number_field :savings, step: 0.01, class: "form-control" %>
+    <% fields_for :saving do |savings_fields| %>
+        <h3>Savings</h3>
+    <div>
+        <%= savings_fields.label :savings_amount, "Savings" %>
+        <%= savings_fields.number_field :savings_amount, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Housing -->
   <div class="field">
-    <%= f.label :housing, "Housing" %>
-    <%= f.number_field :housing, step: 0.01, class: "form-control" %>
+    <%= fields_for :housing do |housing_fields| %>
+        <h3>Housing</h3>
+    <div>
+        <%= housing_fields.label :housing_payment, "Mortgage/Rent" %>
+        <%= housing_fields.number_field :housing_payment, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= housing_fields.label :water, "Water" %>
+        <%= housing_fields.number_field :water, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= housing_fields.label :natural_gas, "Natural Gas" %>
+        <%= housing_fields.number_field :natural_gas, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= housing_fields.label :electricity, "Electricity" %>
+        <%= housing_fields.number_field :electricity, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= housing_fields.label :cable, "Cable" %>
+        <%= housing_fields.number_field :cable, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= housing_fields.label :trash, "Trash" %>
+        <%= housing_fields.number_field :trash, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Transportation -->
   <div class="field">
-    <%= f.label :transportation, "Transportation" %>
-    <%= f.number_field :transportation, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :transportation do |transportation_fields| %>
+        <h3>Transportation</h3>
+    <div>
+        <%= transportation_fields.label :gasoline, "Gas" %>
+        <%= transportation_fields.number_field :gasoline, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= transportation_fields.label :maintenance, "Maintenance" %>
+        <%= transportation_fields.number_field :maintenance, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Food -->
   <div class="field">
-    <%= f.label :food, "Food" %>
-    <%= f.number_field :food, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :food do |food_fields| %>
+        <h3>Food</h3>
+    <div>
+        <%= food_fields.label :groceries, "Groceries" %>
+        <%= food_fields.number_field :groceries, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= food_fields.label :restaurants, "Restaurants" %>
+        <%= food_fields.number_field :restaurants, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Personal -->
   <div class="field">
-    <%= f.label :personal, "Personal" %>
-    <%= f.number_field :personal, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :personal do |personal_fields| %>
+        <h3>Personal</h3>
+    <div>
+        <%= personal_fields.label :clothing, "Clothing" %>
+        <%= personal_fields.number_field :clothing, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= personal_fields.label :phone, "Phone" %>
+        <%= personal_fields.number_field :phone, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= personal_fields.label :fun_money, "Fun Money" %>
+        <%= personal_fields.number_field :fun_money, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= personal_fields.label :hygiene, "Hygiene" %>
+        <%= personal_fields.number_field :hygiene, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= personal_fields.label :subscriptions, "Subscriptions" %>
+        <%= personal_fields.number_field :subscriptions, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Lifestyle -->
   <div class="field">
-    <%= f.label :lifestyle, "Lifestyle" %>
-    <%= f.number_field :lifestyle, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :lifestyle do |lifestyle_fields| %>
+        <h3>Lifestyle</h3>
+    <div>
+        <%= lifestyle_fields.label :pet_care, "Pet Care" %>
+        <%= lifestyle_fields.number_field :pet_care, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= lifestyle_fields.label :child_care, "Child Care" %>
+        <%= lifestyle_fields.number_field :child_care, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= lifestyle_fields.label :entertainment, "Entertainment" %>
+        <%= lifestyle_fields.number_field :entertainment, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= lifestyle_fields.label :miscellaneous, "Miscellaneous" %>
+        <%= lifestyle_fields.number_field :miscellaneous, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
+
 
   <!-- Health -->
   <div class="field">
-    <%= f.label :health, "Health" %>
-    <%= f.number_field :health, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :health do |health_fields| %>
+        <h3>Health</h3>
+    <div>
+        <%= health_fields.label :gym, "Gym" %>
+        <%= health_fields.number_field :gym, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= health_fields.label :health_products, "Health Products" %>
+        <%= health_fields.number_field :health_products, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= health_fields.label :doctor_visits, "Doctor Visits" %>
+        <%= health_fields.number_field :doctor_visits, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Insurance -->
   <div class="field">
-    <%= f.label :insurance, "Insurance" %>
-    <%= f.number_field :insurance, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :insurance do |insurance_fields| %>
+        <h3>Insurance</h3>
+    <div>
+        <%= insurance_fields.label :health_insurance, "Health Insurance" %>
+        <%= insurance_fields.number_field :health_insurance, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= insurance_fields.label :life_insurance, "Life Insurance" %>
+        <%= insurance_fields.number_field :life_insurance, step: 0.01, class: "form-conrol" %>
+    </div>
+
+    <div>
+        <%= insurance_fields.label :car_insurance, "Car Insurance" %>
+        <%= insurance_fields.number_field :car_insurance, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= insurance_fields.label :home_insurance, "Home Insurance" %>
+        <%= insurance_fields.number_field :home_insurance, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= insurance_fields.label :identity_insurance, "Identity Insurance" %>
+        <%= insurance_fields.number_field :identity_insurance, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <!-- Debt -->
   <div class="field">
-    <%= f.label :debt, "Debt" %>
-    <%= f.number_field :debt, step: 0.01, class: "form-control" %>
+    <%= f.fields_for :debt do |debt_fields| %>
+        <h3>Debt</h3>
+    <div>
+        <%= debt_fields.label :car_payment, "Car Payment" %>
+        <%= debt_fields.number_field :car_payment, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= debt_fields.label :student_loan, "Student Loan" %>
+        <%= debt_fields.number_field :student_loan, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= debt_fields.label :credit_card, "Credit Card" %>
+        <%= debt_fields.number_field :credit_card, step: 0.01, class: "form-control" %>
+    </div>
+
+    <div>
+        <%= debt_fields.label :personal_debt, "Personal Debt" %>
+        <%= debt_fields.number_field :personal_debt, step: 0.01, class: "form-control" %>
+    </div>
+    <% end %>
   </div>
 
   <div class="actions">

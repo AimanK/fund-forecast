@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_payment: 1.5
+  student_loan: 1.5
+  credit_card: 1.5
+  personal_debt: 1.5
+  budget: one
+
+two:
+  car_payment: 1.5
+  student_loan: 1.5
+  credit_card: 1.5
+  personal_debt: 1.5
+  budget: two

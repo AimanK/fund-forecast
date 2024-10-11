@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  housing_payment: 1.5
+  water: 1.5
+  natural_gas: 1.5
+  electricity: 1.5
+  cable: 1.5
+  trash: 1.5
+  budget: one
+
+two:
+  housing_payment: 1.5
+  water: 1.5
+  natural_gas: 1.5
+  electricity: 1.5
+  cable: 1.5
+  trash: 1.5
+  budget: two

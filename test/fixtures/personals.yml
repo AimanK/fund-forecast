@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clothing: 1.5
+  phone: 1.5
+  fun_money: 1.5
+  hygiene: 1.5
+  subscriptions: 1.5
+  budget: one
+
+two:
+  clothing: 1.5
+  phone: 1.5
+  fun_money: 1.5
+  hygiene: 1.5
+  subscriptions: 1.5
+  budget: two

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gym: 1.5
+  health_products: 1.5
+  doctor_visits: 1.5
+  budget: one
+
+two:
+  gym: 1.5
+  health_products: 1.5
+  doctor_visits: 1.5
+  budget: two

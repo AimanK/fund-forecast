@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  health_insurance: 1.5
+  life_insurance: 1.5
+  car_insurance: 1.5
+  home_insurance: 1.5
+  identity_insurance: 1.5
+  budget: one
+
+two:
+  health_insurance: 1.5
+  life_insurance: 1.5
+  car_insurance: 1.5
+  home_insurance: 1.5
+  identity_insurance: 1.5
+  budget: two

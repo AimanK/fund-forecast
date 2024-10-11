@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet_care: 1.5
+  child_care: 1.5
+  entertainment: 1.5
+  miscellaneous: 1.5
+  budget: one
+
+two:
+  pet_care: 1.5
+  child_care: 1.5
+  entertainment: 1.5
+  miscellaneous: 1.5
+  budget: two

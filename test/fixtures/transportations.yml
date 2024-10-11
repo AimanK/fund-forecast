@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gasoline: 1.5
+  maintenance: 1.5
+  budget: one
+
+two:
+  gasoline: 1.5
+  maintenance: 1.5
+  budget: two
